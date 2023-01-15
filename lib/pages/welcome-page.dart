@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:travely/pages/navpages/main-page.dart';
 import 'package:travely/utils/colors.dart';
 import 'package:travely/widget/app-large-text.dart';
 import 'package:travely/widget/app-text.dart';
 import 'package:travely/widget/responsive-button.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<WelcomePage> createState() => _WelcomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _WelcomePageState extends State<WelcomePage> {
   List images = ['welcome-one.png', 'welcome-two.png', 'welcome-three.png'];
   @override
   Widget build(BuildContext context) {
@@ -50,9 +51,16 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         const SizedBox(height: 40),
-                        ResponsiveButton(
-                          width: 120,
-                        )
+                        InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MainPage()));
+                            },
+                            child: ResponsiveButton(
+                              width: 120,
+                            ))
                       ],
                     ),
                     Column(
