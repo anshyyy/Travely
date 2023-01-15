@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:travely/utils/colors.dart';
+import 'package:travely/widget/app-large-text.dart';
+import 'package:travely/widget/app-text.dart';
+import 'package:travely/widget/responsive-button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -26,9 +30,44 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
-                      children: [],
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AppLargeText(text: "Trips"),
+                        AppText(text: "Mountain", size: 30),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          width: 250,
+                          child: AppText(
+                            text:
+                                "Mountain hikes give you an incredible sense of freedom along with endurance tests",
+                            color: AppColors.textColor2,
+                            size: 15,
+                          ),
+                        ),
+                        const SizedBox(height: 40),
+                        ResponsiveButton(
+                          width: 120,
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: List.generate(3, (indexSlider) {
+                        return Container(
+                          margin: const EdgeInsets.only(bottom: 2),
+                          width: 6,
+                          height: index == indexSlider ? 25 : 8,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: index == indexSlider
+                                  ? AppColors.mainColor
+                                  : AppColors.mainColor.withOpacity(0.3)),
+                        );
+                      }),
                     )
                   ],
                 ),
