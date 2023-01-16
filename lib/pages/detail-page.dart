@@ -6,6 +6,7 @@ import 'package:travely/utils/five-star.dart';
 import 'package:travely/widget/app-button.dart';
 import 'package:travely/widget/app-large-text.dart';
 import 'package:travely/widget/app-text.dart';
+import 'package:travely/widget/responsive-button.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -17,6 +18,7 @@ class DetailPage extends StatefulWidget {
 class _DetailPageState extends State<DetailPage> {
   double rating = 4.5;
   int selectedIndex = -1;
+  bool like = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,6 +149,58 @@ class _DetailPageState extends State<DetailPage> {
                             ),
                           );
                         }),
+                      ),
+                      SizedBox(height: 30),
+                      AppLargeText(
+                        text: "Description",
+                        size: 22,
+                        color: Colors.black87,
+                      ),
+                      SizedBox(height: 5),
+                      Container(
+                        child: AppText(
+                            text:
+                                "Yosemite National Park is located in central Sierra Nevada in the US state of California. It is located near the wild protected areas"),
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Row(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              setState(() {
+                                if (like) {
+                                  like = false;
+                                } else {
+                                  like = true;
+                                }
+                              });
+                            },
+                            child: AppButton(
+                              size: 60,
+                              color: like ? Colors.red : AppColors.mainColor,
+                              backgroundColor: Colors.white,
+                              borderColor: AppColors.mainColor,
+                              isIcon: true,
+                              icon:
+                                  like ? Icons.favorite : Icons.favorite_border,
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          InkWell(
+                            onTap: (() {}),
+                            child: SafeArea(
+                              child: Container(
+                                child: ResponsiveButton(
+                                  text: "Book Trip Now",
+                                  isResponsive: true,
+                                  width: 280,
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
                       )
                     ],
                   ),
