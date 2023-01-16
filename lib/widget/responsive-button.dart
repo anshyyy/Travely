@@ -4,7 +4,7 @@ import 'package:travely/widget/app-text.dart';
 
 class ResponsiveButton extends StatelessWidget {
   bool? isResponsive;
-  String? text = 'hi';
+  String? text;
   double? width;
   ResponsiveButton(
       {super.key, this.text, this.isResponsive = false, this.width});

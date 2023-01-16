@@ -58,9 +58,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                   MaterialPageRoute(
                                       builder: (context) => MainPage()));
                             },
-                            child: ResponsiveButton(
-                              width: 120,
-                            ))
+                            child: ResponsiveButton(width: 120, text: ""))
                       ],
                     ),
                     Column(
