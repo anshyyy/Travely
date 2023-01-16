@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             padding: const EdgeInsets.only(top: 40, left: 20),
             child: Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.menu,
                   size: 30,
                   color: Colors.black87,
@@ -70,13 +70,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       CircleTabIndicator(color: AppColors.mainColor, radius: 3),
                   controller: _tabController,
                   tabs: [
-                    Tab(
+                    const Tab(
                       text: "Places",
                     ),
-                    Tab(
+                    const Tab(
                       text: "Inspiration",
                     ),
-                    Tab(text: "Emotions")
+                    const Tab(text: "Emotions")
                   ]),
             ),
           ),
@@ -89,24 +89,27 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 itemCount: 3,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin: const EdgeInsets.only(right: 15, top: 10),
-                    width: 200,
-                    height: 300,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                        image: DecorationImage(
-                            image: AssetImage('img/' + places[index]),
-                            fit: BoxFit.cover)),
+                  return InkWell(
+                    onTap: (() {}),
+                    child: Container(
+                      margin: const EdgeInsets.only(right: 15, top: 10),
+                      width: 200,
+                      height: 300,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image: DecorationImage(
+                              image: AssetImage('img/' + places[index]),
+                              fit: BoxFit.cover)),
+                    ),
                   );
                 },
               ),
-              Text("THERE"),
-              Text("Bye")
+              const Text("THERE"),
+              const Text("Bye")
             ]),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
@@ -125,7 +128,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ],
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Container(
             height: 120,
             width: double.maxFinite,
@@ -150,7 +153,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       'img/' + images.keys.elementAt(index)),
                                   fit: BoxFit.cover)),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Container(
                           child: AppText(
                             text: images.values.elementAt(index),
