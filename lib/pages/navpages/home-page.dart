@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     "kayaking.png": "Kayaking",
     "snorkling.png": "Snorkling"
   };
-  List places = ["treking.jpeg", "ropeway.jpeg", "mountain.jpeg"];
+
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             Container(
               margin: const EdgeInsets.only(left: 20),
               child: AppLargeText(

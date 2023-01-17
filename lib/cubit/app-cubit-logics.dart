@@ -4,7 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travely/cubit/app-cubits.dart';
 import 'package:travely/pages/detail-page.dart';
 import 'package:travely/pages/navpages/home-page.dart';
+import 'package:travely/pages/navpages/main-page.dart';
 import 'package:travely/pages/welcome-page.dart';
+import 'package:travely/utils/colors.dart';
 
 class AppCubitLogics extends StatefulWidget {
   const AppCubitLogics({super.key});
@@ -25,10 +27,13 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
           return DetailPage();
         }
         if (state is LoadedState) {
-          return HomePage();
+          return MainPage();
         }
         if (state is LoadingState) {
-          return Center(child: CircularProgressIndicator());
+          return Center(
+              child: CircularProgressIndicator(
+            color: AppColors.mainColor,
+          ));
         } else {
           return Container();
         }

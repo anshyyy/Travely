@@ -76,7 +76,7 @@ class _DetailPageState extends State<DetailPage> {
                     padding:
                         const EdgeInsets.only(left: 20, right: 20, top: 20),
                     width: MediaQuery.of(context).size.width,
-                    height: 500,
+                    height: 600,
                     decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
@@ -154,7 +154,7 @@ class _DetailPageState extends State<DetailPage> {
                                 margin: const EdgeInsets.only(right: 10),
                                 child: AppButton(
                                     text: (index + 1).toString(),
-                                    size: 60,
+                                    size: 50,
                                     color: selectedIndex == index
                                         ? Colors.white
                                         : Colors.black,
@@ -177,7 +177,7 @@ class _DetailPageState extends State<DetailPage> {
                           child: AppText(text: detail.places.description),
                         ),
                         SizedBox(
-                          height: 10,
+                          height: 20,
                         ),
                         Row(
                           children: [
