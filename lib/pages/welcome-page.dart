@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:travely/cubit/app-cubits.dart';
 import 'package:travely/pages/navpages/main-page.dart';
 import 'package:travely/utils/colors.dart';
 import 'package:travely/widget/app-large-text.dart';
 import 'package:travely/widget/app-text.dart';
 import 'package:travely/widget/responsive-button.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc/src/bloc_builder.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -53,10 +56,11 @@ class _WelcomePageState extends State<WelcomePage> {
                         const SizedBox(height: 40),
                         InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => MainPage()));
+                              BlocProvider.of<AppCubits>(context).getData();
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) => MainPage()));
                             },
                             child: ResponsiveButton(width: 120, text: ""))
                       ],
